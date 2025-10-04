@@ -97,6 +97,7 @@ The pipeline works for both **images** and **videos**, where I provide query as 
 - **Prompt sensitivity**: The quality of results depends strongly on the wording of the text prompt and the confidence threshold used.  
 - **Performance on crowded scenes**: The system works best with a small number of objects. Segmentation becomes inconsistent in cluttered or crowded frames.  
 - **Resolution constraints**: Frames are padded to multiples of 16 for codec compatibility, which can slightly distort the original aspect ratio.  
-- **Inference only**: The current implementation only supports inference with pre-trained models. There is no training or fine-tuning loop included.  
+- **Inference only**: The current implementation only supports inference with pre-trained models. There is no training or fine-tuning loop included.
+- **Not suitable for long videos**: The pipeline is not designed for very long videos (e.g., 10 minutes or more). Since every frame is processed and masks are propagated sequentially, both memory usage and runtime increases with video length.  
 
 ---
